@@ -19,7 +19,7 @@ namespace User_Input_as_Text
 
         private void btnCalculatePrice_Click(object sender, EventArgs e)
         {
-            // Declare variables
+            // Declare local variables
             string item;
             int quantity;
             double price, totalPrice;
@@ -29,10 +29,18 @@ namespace User_Input_as_Text
             price = Convert.ToDouble(txtPrice.Text);
             quantity = Convert.ToInt32(txtQuantity.Text);
 
-            totalPrice = price * quantity;
+            if (price < 0 || quantity < 0)
+            {
+                lblTotalPrice.Text = "Please enter positive values.";
+            }
+            else
+            {
+                totalPrice = price * quantity;
 
-            // Output Result
-            lblTotalPrice.Text = "Final Price for " + quantity + " " + item + "(s) is: " + totalPrice.ToString("C");
+                // Output Result
+                lblTotalPrice.Text = "Final Price for " + quantity + " " + item + "(s) is: " + totalPrice.ToString("C");
+            }
+            
         }
     }
 }
