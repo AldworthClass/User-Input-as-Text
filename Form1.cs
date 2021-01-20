@@ -29,6 +29,7 @@ namespace User_Input_as_Text
             price = Convert.ToDouble(txtPrice.Text);
             quantity = Convert.ToInt32(txtQuantity.Text);
 
+            // Makes sure negative numbers have not been typed
             if (price < 0 || quantity < 0)
             {
                 lblTotalPrice.Text = "Please enter positive values.";
