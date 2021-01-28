@@ -27,7 +27,7 @@ namespace User_Input_as_Text
             // Assign values to Variables
             item = txtItem.Text;
             price = Convert.ToDouble(txtPrice.Text);
-            quantity = Convert.ToInt32(txtQuantity.Text);
+            quantity = (int)numQuantity.Value; ;
 
             // Makes sure negative numbers have not been typed
             if (price < 0 || quantity < 0)
